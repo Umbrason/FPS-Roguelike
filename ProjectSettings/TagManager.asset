@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - FPSRig
+  - Water
+  - UI
+  - Environment
+  - 
+  - Player Entity
+  - Player Projectiles
+  - Player Projectiles No Inter Collision
+  - 
+  - Enemy Entities
+  - Enemy Entities Critical Zone
+  - Enemy Projectiles
+  - Enemy Projectiles No Inter Collision
+  - 
+  - Neutral Entities
+  - Neutral Entities Critical Zone
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
