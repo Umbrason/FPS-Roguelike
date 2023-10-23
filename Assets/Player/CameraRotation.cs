@@ -22,7 +22,4 @@ public class CameraRotation : MonoBehaviour
         ry = (ry + 360f) % 360;
         transform.localRotation = Quaternion.Euler(rx, ry, transform.localEulerAngles.z);
     }
-
-
-
 }

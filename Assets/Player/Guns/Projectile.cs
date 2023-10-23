@@ -25,12 +25,14 @@ public class Projectile : MonoBehaviour
         visual.transform.position = nozzlePosition;
         RB.velocity = direction * speed;
         launchTime = Time.time;
+        visualStartOffset = visual.transform.localPosition;
     }
 
+    Vector3 visualStartOffset;
     float launchTime;
     public void Update()
     {        
-        visual.transform.localPosition = Vector3.Lerp(visual.transform.localPosition, Vector3.zero, (Time.time - launchTime) / pathCorrectionTime);
+        visual.transform.localPosition = Vector3.Lerp(visualStartOffset, Vector3.zero, (Time.time - launchTime) / pathCorrectionTime);
     }
 
 }

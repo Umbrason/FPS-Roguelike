@@ -18,22 +18,12 @@ public class CollisionInfo : MonoBehaviour
     public Vector3 ContactNormal => cached_ContactNormal ??= activeGroundCollisions.Values.Aggregate((a, b) => a + b).normalized;
     void FixedUpdate() => cached_ContactNormal = null;
 
-    const float SLOPE_ANGLE_DEGREES = 30;
-    const float SLOPE_ANGLE_PIs = SLOPE_ANGLE_DEGREES / 180f;
-    
+    [SerializeField] private float SlopeThresholdDegrees = 30;
+    private float SLOPE_ANGLE_PIs => SlopeThresholdDegrees / 180f;
 
-    private float cached_dotThreshold = Mathf.Cos(Mathf.PI * SLOPE_ANGLE_PIs);
+
+    private float cached_dotThreshold => Mathf.Cos(Mathf.PI * SLOPE_ANGLE_PIs);
     private float DotThreshold => cached_dotThreshold;
-
-    private float cached_MaxSlopeRads = Mathf.PI * SLOPE_ANGLE_PIs;
-    public float MaxSlopeRads
-    {
-        get => cached_MaxSlopeRads; set
-        {
-            cached_dotThreshold = Mathf.Cos(value);
-            cached_MaxSlopeRads = value;
-        }
-    }
 
 
     void OnCollisionExit(Collision other)
